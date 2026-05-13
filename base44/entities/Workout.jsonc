@@ -1,0 +1,99 @@
+{
+  "name": "Workout",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Workout name e.g. Chest & Traps"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "push",
+        "pull",
+        "legs",
+        "chest",
+        "back",
+        "arms",
+        "shoulders",
+        "glutes",
+        "upper_body",
+        "lower_body",
+        "full_body",
+        "custom"
+      ],
+      "description": "Workout category"
+    },
+    "exercises": {
+      "type": "array",
+      "description": "List of exercises in the workout",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "muscle_group": {
+            "type": "string"
+          },
+          "target_sets": {
+            "type": "number"
+          },
+          "target_sets_label": {
+            "type": "string"
+          },
+          "target_reps": {
+            "type": "number"
+          },
+          "target_reps_label": {
+            "type": "string"
+          },
+          "last_weight": {
+            "type": "number"
+          },
+          "last_reps": {
+            "type": "number"
+          },
+          "best_weight": {
+            "type": "number"
+          },
+          "best_reps": {
+            "type": "number"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "Estimated duration in minutes"
+    },
+    "is_template": {
+      "type": "boolean",
+      "default": true
+    },
+    "scheduled_day": {
+      "type": "string",
+      "enum": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "description": "Day this workout is scheduled (for recurring templates)"
+    },
+    "planned_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Specific date this workout was intentionally planned for (YYYY-MM-DD)"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

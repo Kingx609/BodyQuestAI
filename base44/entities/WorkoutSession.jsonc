@@ -1,0 +1,109 @@
+{
+  "name": "WorkoutSession",
+  "type": "object",
+  "properties": {
+    "workout_name": {
+      "type": "string"
+    },
+    "workout_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "active"
+    },
+    "exercises": {
+      "type": "array",
+      "description": "Logged exercises with sets",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "muscle_group": {
+            "type": "string"
+          },
+          "sets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "weight": {
+                  "type": "number"
+                },
+                "reps": {
+                  "type": "number"
+                },
+                "rpe": {
+                  "type": "number"
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "equipment_or_variation": {
+                  "type": "string"
+                },
+                "volume": {
+                  "type": "number"
+                },
+                "timestamp": {
+                  "type": "string"
+                },
+                "logged_at_seconds": {
+                  "type": "number"
+                },
+                "is_pr": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "total_volume": {
+      "type": "number",
+      "description": "Total weight x reps"
+    },
+    "total_sets": {
+      "type": "number"
+    },
+    "total_reps": {
+      "type": "number"
+    },
+    "duration_minutes": {
+      "type": "number"
+    },
+    "prs_count": {
+      "type": "number",
+      "default": 0
+    },
+    "heaviest_lift": {
+      "type": "number"
+    },
+    "muscle_group_volume": {
+      "type": "object",
+      "description": "Volume broken down by muscle group"
+    },
+    "ai_feedback": {
+      "type": "string"
+    },
+    "calories_burned_estimate": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "workout_name",
+    "date"
+  ]
+}

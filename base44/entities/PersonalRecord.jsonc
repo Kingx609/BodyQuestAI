@@ -1,0 +1,32 @@
+{
+  "name": "PersonalRecord",
+  "type": "object",
+  "properties": {
+    "exercise_name": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "reps": {
+      "type": "number"
+    },
+    "volume": {
+      "type": "number",
+      "description": "weight x reps for this PR"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "session_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "exercise_name",
+    "weight",
+    "reps",
+    "date"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "onboarding_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "fitness_goal": {
+      "type": "string",
+      "description": "Primary fitness goal e.g. build_muscle, lose_fat, athletic_performance"
+    },
+    "training_styles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Preferred training styles e.g. Bro Split, PPL, Powerlifting"
+    },
+    "gym_access": {
+      "type": "string",
+      "description": "Type of gym access e.g. full_gym, home_gym, bodyweight"
+    },
+    "activity_level": {
+      "type": "string",
+      "description": "Activity level e.g. sedentary, lightly_active, moderately_active, very_active"
+    },
+    "injuries": {
+      "type": "string",
+      "description": "Any injuries or limitations"
+    },
+    "coaching_personality": {
+      "type": "string",
+      "enum": [
+        "tough_love",
+        "hype_man",
+        "calm_technician",
+        "sarcastic_friend"
+      ],
+      "default": "tough_love",
+      "description": "Titan coaching personality preference"
+    },
+    "maintenance_calories": {
+      "type": "number",
+      "description": "Estimated daily maintenance calories before goal-based deficit or surplus"
+    },
+    "calorie_goal": {
+      "type": "number",
+      "description": "Daily calorie target"
+    },
+    "protein_goal": {
+      "type": "number",
+      "description": "Daily protein target in grams"
+    },
+    "carb_goal": {
+      "type": "number",
+      "description": "Daily carb target in grams"
+    },
+    "fat_goal": {
+      "type": "number",
+      "description": "Daily fat target in grams"
+    },
+    "nutrition_targets_confirmed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the user accepted or customized nutrition targets during onboarding"
+    },
+    "nutrition_targets_source": {
+      "type": "string",
+      "enum": [
+        "titan",
+        "custom"
+      ],
+      "description": "Whether active nutrition targets came from Titan estimates or user customization"
+    },
+    "weight_kg": {
+      "type": "number"
+    },
+    "height_cm": {
+      "type": "number"
+    },
+    "age": {
+      "type": "number"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female",
+        "other"
+      ]
+    },
+    "display_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "role"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Meal",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "name": {
+      "type": "string",
+      "description": "Meal name e.g. Breakfast, Lunch, Snack"
+    },
+    "description": {
+      "type": "string",
+      "description": "What was eaten"
+    },
+    "estimated_calories": {
+      "type": "number"
+    },
+    "estimated_protein": {
+      "type": "number"
+    },
+    "estimated_carbs": {
+      "type": "number"
+    },
+    "estimated_fats": {
+      "type": "number"
+    },
+    "photo_url": {
+      "type": "string"
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "date",
+    "description"
+  ]
+}

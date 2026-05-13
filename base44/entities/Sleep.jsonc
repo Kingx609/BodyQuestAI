@@ -1,0 +1,34 @@
+{
+  "name": "Sleep",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the night (e.g. the night of May 9 = 2026-05-09)"
+    },
+    "bedtime": {
+      "type": "string",
+      "description": "Bedtime in HH:MM 24h format, e.g. 23:30"
+    },
+    "wake_time": {
+      "type": "string",
+      "description": "Wake time in HH:MM 24h format, e.g. 07:15"
+    },
+    "duration_hours": {
+      "type": "number",
+      "description": "Total sleep in hours, e.g. 7.75"
+    },
+    "quality": {
+      "type": "number",
+      "description": "Sleep quality rating 1-10"
+    },
+    "ai_insight": {
+      "type": "string",
+      "description": "AI generated recovery insight"
+    }
+  },
+  "required": [
+    "date"
+  ]
+}
